@@ -1,32 +1,15 @@
-header{
-  background-color: lightcyan;
-  color: chocolate;
-  box-shadow: 0 0 10px lightblue;
-  text-align: center;
-  padding: 15px;
-  position:sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-nav a{
-  display: inline-block;
-  background-color: rgb(150, 200, 216);
-  border-radius: 4px;
-  margin: 4px;
-  padding: 8px;
-}
-nav a:hover{
-  cursor: pointer;
-  background-color: rgb(116, 187, 211);
-}
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  padding: 2rem;
   text-align: center;
+  
 }
-
+.app
+{
+  display: flex;
+  gap: 30px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

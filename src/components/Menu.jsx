@@ -1,5 +1,5 @@
 import { Link, Navigate } from 'react-router-dom';
-
+import { Button } from 'antd';
 function Menu(){
 
 
@@ -11,6 +11,7 @@ function Menu(){
             <Link to="/about">About</Link>
             <Link to="/privacy">Privacy</Link>
         </nav>
+        <Button color="green" type="primary" variant='filled'>Click me</Button>
         </>
     )
 }
