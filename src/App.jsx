@@ -16,11 +16,6 @@ import Login from './components/Login'
 const { Header, Sider, Content } = Layout;
 
 
-// const contentStyle = {
-
-
-// }
-
 
 
 const App = () => {
