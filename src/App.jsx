@@ -4,15 +4,11 @@ import About from './components/About'
 import Privacy from './components/Privacy'
 import Home from './components/Home'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import {
-  QuestionCircleOutlined,
-  LoginOutlined,
-  LockOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
-import { Button, Layout, Menu, theme } from 'antd';
+import {Layout, theme } from 'antd';
 import { useState } from 'react'
 import Login from './components/Login'
+import SideBar from './components/SideBar'
+import UserList from './components/UserList'
 const { Header, Sider, Content } = Layout;
 
 
@@ -25,42 +21,9 @@ const App = () => {
   } = theme.useToken();
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={['1']}
-          items={[
-            {
-              key: '1',
-              icon: 
-                <Link to={"/about"}>
-                  <QuestionCircleOutlined />
-                </Link>,
-              label: 'About',
-            },
-            {   
-              key: '2',
-              icon: 
-              <Link to={"/privacy"}>
-                <LockOutlined />,
-              </Link>,
-              label: 'Privacy',
-            },
-            {
-              key: '3',
-              icon:
-              <Link to={"/login"}>
-                  <LoginOutlined />,
-              </Link> ,
-              label: 'Login',
-            },
-          ]}
-        />
-      </Sider>
+      <SideBar/>
       <Layout>
-  
+    
         <Content
           style={{
             margin: '24px 16px',
@@ -76,6 +39,7 @@ const App = () => {
                <Route path="/about" element={<About/>}/>
                <Route path="/privacy" element={<Privacy/>}/>
                <Route path='/login' element={<Login/>}/>
+               <Route path='/users' element={<UserList/>}/>
                <Route path="*" element={<h2>Page not found</h2>}/>
                {/* <About/>
                <Privacy/> */}
