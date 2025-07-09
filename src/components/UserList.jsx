@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import { useEffect, useState } from "react";
 import User from "./User";
+import axios from "axios";
 
 const url = "https://dummyjson.com/users";
 
@@ -29,14 +30,34 @@ function UserList()
         let apiUrl = `${url}?limit=${pagination.limit}&skip=${pagination.skip}`;
         pagination.skip += pagination.limit;
 
-        fetch(apiUrl)
-        .then(response=>response.json())
-        .then(data => {
-            setUsers([...users,...data.users]); 
-            // console.log( "Inside function updating data" , users); 
+    //     fetch(apiUrl)
+    //     .then(response=>response.json())
+    //     .then(data => {
+    //         setUsers([...users,...data.users]); 
+    //         // console.log( "Inside function updating data" , users); 
             
-        }
-    )
+    //     }
+    // )
+
+        // axios.post(apiUrl, {
+        //     title: "Mr.",
+        //     firstName: "John",
+        //     userId: "john123",
+        //     lastName: "Doe",
+        // }).catch(err=>{
+        //     console.error("Error posting data", err);
+        // });
+
+        axios.get(apiUrl).then(data=>{
+            console.log("Data received", data);
+            setUsers([...users,...data.data.users]);})
+            .catch(err=>{
+                console.error("Error fetching data", err);
+            })
+
+
+
+
     }
     // console.log( "After updating data" , users); 
     // loadUsers();
