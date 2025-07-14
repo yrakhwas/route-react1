@@ -4,11 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import '@ant-design/v5-patch-for-react-19';
+import { CounterProvider } from './contexts/counter.context.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <CounterProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CounterProvider>
   </StrictMode>,
 )

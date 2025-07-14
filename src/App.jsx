@@ -9,6 +9,7 @@ import { useState } from 'react'
 import Login from './components/Login'
 import SideBar from './components/SideBar'
 import UserList from './components/UserList'
+import Counter from './components/Counter'
 const { Header, Sider, Content } = Layout;
 
 
@@ -40,6 +41,7 @@ const App = () => {
                <Route path="/privacy" element={<Privacy/>}/>
                <Route path='/login' element={<Login/>}/>
                <Route path='/users' element={<UserList/>}/>
+               <Route path='/counter' element={<Counter/>}/>
                <Route path="*" element={<h2>Page not found</h2>}/>
                {/* <About/>
                <Privacy/> */}

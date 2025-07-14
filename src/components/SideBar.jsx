@@ -5,15 +5,25 @@ import {
   LoginOutlined,
   LockOutlined,
   UserOutlined,
+  NumberOutlined,
 } from '@ant-design/icons';
 import {Layout,Menu } from 'antd';
+
+import { useContext } from 'react';
+import { CounterContext } from '../contexts/counter.context';
+
 const { Header, Sider, Content } = Layout;
 function SideBar(){
 
-
+  const {count} = useContext(CounterContext);
     return (
         <Sider trigger={null} collapsible>
         <div className="demo-logo-vertical" />
+        <div className='logo'>
+          <p style={{color:"white"}}>Counter: {count}</p>
+        </div>
+
+
         <Menu
           theme="dark"
           mode="inline"
@@ -31,7 +41,7 @@ function SideBar(){
               key: '2',
               icon: 
               <Link to={"/privacy"}>
-                <LockOutlined />,
+                <LockOutlined />
               </Link>,
               label: 'Privacy',
             },
@@ -39,7 +49,7 @@ function SideBar(){
               key: '3',
               icon:
               <Link to={"/users"}>
-                  <UserOutlined />,
+                  <UserOutlined />
               </Link> ,
               label: 'Users',
             },
@@ -47,9 +57,17 @@ function SideBar(){
               key: '4',
               icon:
               <Link to={"/login"}>
-                  <LoginOutlined />,
+                  <LoginOutlined />
               </Link> ,
               label: 'Login',
+            },
+            {
+              key: '5',
+              icon:
+              <Link to={"/counter"}>
+                  <NumberOutlined />
+              </Link> ,
+              label: 'Counter',
             },
           ]}
         />
