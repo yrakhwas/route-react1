@@ -9,13 +9,13 @@ import {
 } from '@ant-design/icons';
 import {Layout,Menu } from 'antd';
 
-import { useContext } from 'react';
-import { CounterContext } from '../contexts/counter.context';
-
+import { useSelector } from 'react-redux';
+// import { CounterContext } from '../store/reducers/counter.reducer';
+import { selectCount } from '../store/reducers/counter.reducer';
 const { Header, Sider, Content } = Layout;
 function SideBar(){
-
-  const {count} = useContext(CounterContext);
+  const count = useSelector(selectCount);
+  // const {count} = useContext(CounterContext);
     return (
         <Sider trigger={null} collapsible>
         <div className="demo-logo-vertical" />
